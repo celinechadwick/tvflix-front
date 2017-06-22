@@ -5,6 +5,7 @@ import { browserHistory, Link } from "react-router";
 import Profile from "./Profile";
 import Like from "./Like";
 
+
 class User extends Component {
     constructor(props) {
         super(props);
@@ -30,23 +31,6 @@ class User extends Component {
         });
     }
 
-//This method should be used to delete a like
-    destroyLike(index, id, event) {
-        event.preventDefault();
-
-        axios
-        .delete(``)
-        .then(() => {
-            this.state.likes.splice(index, 1);
-
-            this.setState({
-                likes: this.state.likes
-            });
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-    }
 
 
 
@@ -60,7 +44,6 @@ class User extends Component {
                         <Like
                         key={like.id}
                         owner={like}
-                        destroyLike={this.destroyLike.bind(this, index, like.id)}
                         />
                     );
                 }) }
