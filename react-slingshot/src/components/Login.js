@@ -11,6 +11,8 @@ class Login extends Component {
     }
 
 
+
+
     componentDidMount() {
       //This should be a call to our own database
         axios
@@ -30,9 +32,11 @@ class Login extends Component {
 
     handleSubmit(event) {
       event.preventDefault();
-        //Logic to compare form data to the database data goes here
+          browserHistory.push(`/users/this.props.params.user_id`);
+          //The Axios call should set state to the user data, so we can
+      })
+        //Logic to compare form data to the database data goes here?
   }
-
 
 
     // HELP: WE NEED TO ADD VERIFICATION TO CHECK IF THE FORM DATA IS CORRECT. Maybe make this an IF statement to check.
