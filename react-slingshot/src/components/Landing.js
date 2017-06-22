@@ -1,18 +1,23 @@
-import React, { Component } from "react";
-import Nav from "./Nav";
+import React, {Component} from "react";
+import { Link } from "react-router";
 
-Class Dashboard extends Component {
+
+class Landing extends Component {
   constructor(props) {
     super(props);
     }
     render() {
             return (
                 <div>
-                    <Nav />
+                    <div>
+                      <Link to="/Users/login">
+                        Add Owner
+                      </Link>
+                    </div>
 
                 </div>
             );
         }
 
 }
-    export default Dashboard;
+    export default Landing;
