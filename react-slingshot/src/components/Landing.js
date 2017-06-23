@@ -10,7 +10,7 @@ class Landing extends Component {
             return (
                 <div>
                     <div>
-                      <Link to="/Users/login">
+                      <Link to="/users/login">
                         Add Owner
                       </Link>
                     </div>

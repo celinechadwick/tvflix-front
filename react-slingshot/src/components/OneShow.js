@@ -15,6 +15,7 @@ class OneShow extends Component {
     //     browserHistory.push(`/owners/${owner.id}/pets/new`);
     // }
 
+    // TO DO: Add show to the user profile using a button
 
     render() {
         return (
@@ -34,7 +35,7 @@ class OneShow extends Component {
                     </div>
                 </div>
                 <div className="col-sm-3 txt-right">
-                    <Link to={ `/users/${this.props.user.user_id}` } className="btn btn-info margin-left-5">
+                    <Link to={  } className="btn btn-info margin-left-5">
                         <i className="btn btn-primary btn-sm"></i>
                     </Link>
 

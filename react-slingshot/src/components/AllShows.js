@@ -15,8 +15,8 @@ class Dashboard extends Component {
 
 
     componentDidMount() {
+      //TO DO: Would be best to get a random number for the page param. Would give you a new page every time!
         axios
-        //Would be best to get a random number for the page param. Would give you a new page every time!
         .get(`http://api.tvmaze.com/shows?page=1`)
         .then((response) => {
             const showData = response.data;

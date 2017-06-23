@@ -43,7 +43,7 @@ class User extends Component {
                     return (
                         <Like
                         key={like.id}
-                        owner={like}
+                        like={like}
                         />
                     );
                 }) }
