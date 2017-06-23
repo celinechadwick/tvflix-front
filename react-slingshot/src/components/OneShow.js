@@ -4,9 +4,6 @@ import { Link } from "react-router";
 class OneShow extends Component {
     constructor(props) {
         super(props);
-        this.state= {
-          shows:[];
-        }
     }
     // saveShow (show, event) {
     //     event.preventDefault();
