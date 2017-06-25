@@ -4,7 +4,7 @@ import axios from "axios";
 import Nav from "./Nav";
 import OneShow from "./OneShow";
 
-class Dashboard extends Component {
+class AllShows extends Component {
     constructor(props) {
         super(props);
 
@@ -19,11 +19,8 @@ class Dashboard extends Component {
         axios
         .get(`http://api.tvmaze.com/shows?page=1`)
         .then((response) => {
-            const showData = response.data;
-
-            //Next up: Set state with owners from API
             this.setState({
-                shows: ShowData
+                shows: response.data
             });
         })
         .catch((err) => {
@@ -37,12 +34,9 @@ class Dashboard extends Component {
             <div>
                 <Nav />
 
-                { this.state.shows.map((show, index) => {
+                { this.state.shows.map((show) => {
                     return (
-                        <OneShow
-                        key={index}
-                        show={show}
-                        />
+                        <OneShow key={show.id} show={show} />
                     );
                 }) }
             </div>

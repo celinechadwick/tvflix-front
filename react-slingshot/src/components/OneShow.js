@@ -35,7 +35,7 @@ class OneShow extends Component {
                     </div>
                 </div>
                 <div className="col-sm-3 txt-right">
-                    <Link to={  } className="btn btn-info margin-left-5">
+                    <Link to="#" className="btn btn-info margin-left-5">
                         <i className="btn btn-primary btn-sm"></i>
                     </Link>
 
@@ -45,4 +45,4 @@ class OneShow extends Component {
     }
 }
 
-export default Pet;
+export default OneShow;
