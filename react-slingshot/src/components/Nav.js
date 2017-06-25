@@ -18,15 +18,13 @@ class Nav extends Component {
                             <span className="icon-bar"></span>
                         </button>
                         <Link to="/" className="navbar-brand">
-                            Pet List
                         </Link>
                     </div>
 
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav">
                             <li>
-                                <Link to="/users">
-                                    Add Owner
+                                <Link to="/shows">
                                 </Link>
                             </li>
                         </ul>
