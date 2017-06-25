@@ -3,12 +3,14 @@ import ReactDom from "react-dom";
 import { Route, Router, browserHistory } from "react-router";
 
 //Application assets
+
 // import "./assets/css/style.css";
+
 // import "./assets/css/bootstrap.css";
 
 import Landing from "./components/Landing";
 import Login from "./components/Login";
-import NewUser from "./components/NewUser"
+import NewUser from "./components/NewUser";
 import User from "./components/User";
 import AllShows from "./components/AllShows";
 import ShowInfo from "./components/ShowInfo";
