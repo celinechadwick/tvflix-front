@@ -37,10 +37,10 @@ componentDidMount() {
                 <div className="row">
                     <div className="col-sm-8">
                         <div className="md-font">
-                            {this.props.user.first_name} {this.props.user.last_name}
+                            {this.state.user.first_name} {this.state.user.last_name}
                         </div>
                         <div>
-                            {this.props.user.email}
+                            {this.state.user.email}
                         </div>
                     </div>
 
