@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Nav from "./Nav";
 
-Class Dashboard extends Component {
+class Dashboard extends Component {
   constructor(props) {
     super(props);
     }
@@ -9,10 +9,11 @@ Class Dashboard extends Component {
             return (
                 <div>
                     <Nav />
-
+                    hello world
                 </div>
             );
         }
 
 }
-    export default Dashboard;
+
+export default Dashboard;
