@@ -1,4 +1,4 @@
-mport React, { Component } from "react";
+import React, { Component } from "react";
 import axios from "axios";
 import { browserHistory } from "react-router";
 
@@ -12,6 +12,7 @@ class NewUser extends Component {
             first_name: "",
             last_name: "",
             email: "",
+            password: "",
         }
     }
 
@@ -19,11 +20,10 @@ class NewUser extends Component {
         event.preventDefault();
 
         axios
-        .post("", {
+        .post("https://tvflix-back.herokuapp.com/users", {
             user: this.state
         })
         .then(() => {
-            //Yay! New owner created
             browserHistory.push("users/login");
         })
         .catch((err) => {
@@ -42,7 +42,7 @@ class NewUser extends Component {
         return (
             <div>
                 <Nav />
-                
+
                 <h2 className="txt-center">Create An Account</h2>
 
                 <div className="container well small-container margin-top-20">
@@ -65,9 +65,15 @@ class NewUser extends Component {
                         <div className="margin-top-10">
                             <input onChange={this.handleChange.bind(this)} name="email" type="email" className="form-control" />
                         </div>
+                        <div className="bold margin-top-10">
+                            Password
+                        </div>
+                        <div className="margin-top-10">
+                            <input onChange={this.handleChange.bind(this)} name="password" type="password" className="form-control" />
+                        </div>
 
                         <div className="margin-top-20 txt-center">
-                            <button type="submit" className="btn btn-primary">Submit Owner</button>
+                            <button type="submit" className="btn btn-primary">Submit </button>
                         </div>
                     </form>
                 </div>
@@ -76,4 +82,4 @@ class NewUser extends Component {
     }
 }
 
-export default NewOwner;
+export default NewUser;
