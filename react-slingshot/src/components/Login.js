@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import {Link} from "react-router";
+import { browserHistory, Link } from "react-router";
+import axios from "axios";
 
 
 class Login extends Component {
@@ -8,39 +9,29 @@ class Login extends Component {
     this.state = {
             userData:[]
             // Get info for user and store in this object
-    }
+    };
+  }
 
 
-
-
-    componentDidMount() {
-      //This should be a call to our own database
-        axios
-        .get("")
+  handleSubmit(event) {
+      event.preventDefault();
+      axios.post("http://tvflix-back.herokuapp.com/users/login", {
+          user: this.state
+      })
         .then((response) => {
-            const UserData = response.data;
-
-            //Next up: Set state with user/:id from API
-            this.setState({
-                userData: userData
-            });
+            const token = response.data.token;
+            window.localStorage.setItem("token", token);
+            browserHistory.push("/shows");
         })
         .catch((err) => {
             console.log(err);
         });
-    }
-
-    handleSubmit(event) {
-      event.preventDefault();
-          browserHistory.push(`/users/this.props.params.user_id`);
-          //The Axios call should set state to the user data, so we can
-      })
-        //Logic to compare form data to the database data goes here?
   }
 
 
     // HELP: WE NEED TO ADD VERIFICATION TO CHECK IF THE FORM DATA IS CORRECT. Maybe make this an IF statement to check.
     verifyForm(event) {
+      console.log(event.target.value, event.target.name);
         this.setState({
             [event.target.name]: event.target.value
         });
