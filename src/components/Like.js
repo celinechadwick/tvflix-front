@@ -3,9 +3,12 @@
     import axios from "axios";
     import { browserHistory, Link } from "react-router";
 
-    class User extends Component {
+    class Like extends Component {
         constructor(props) {
             super(props);
+            this.state {
+              show: []
+            }
             }
         }
 
@@ -14,10 +17,10 @@
             axios
             .get(``)
             .then((response) => {
-                const LikeData = response.data;
+                const ShowData = response.data;
 
                 this.setState({
-                    like: LikeData
+                    show: ShowData
                 });
             })
             .catch((err) => {
@@ -25,46 +28,34 @@
             });
         }
 
-        destroyLike(index, id, event) {
-            event.preventDefault();
 
-            axios
-            .delete(``)
-            .then(() => {
-
-          browserHistory.push("/users/this.props.params.id");
-
-          this.setState({
-            like: this.state.like
-          });
-
-          })
-            .catch((err) => {
-                console.log(err);
-            });
-        }
 //The delete needs to be tested, and I am not sure if the rendering is pointing to the right data.
         render() {
+          { this.state.shows.map((show) => {
             return (
               <div>
-              <div className="row margin-top-20">
               <div className="col-sm-3">
-                  <img src={} className="img-responsive" />
+                  <img src={this.props.show.image.medium} className="img-responsive" />
               </div>
               <div className="col-sm-6">
                   <div>
-                      Title: <strong>{}</strong>
+                      <strong>{this.props.show.name}</strong>
                   </div>
                   <div className="margin-top-10">
-                      Description: {}
+                      Genres: {this.props.show.genres}
                   </div>
                   <div>
-                      Category: {}
+                      Summary: {this.props.show.summary}
                   </div>
               </div>
+              <div className="col-sm-3 txt-right">
+
                 <button onClick={this.props.destroyLike} className="btn btn-danger margin-left-5">
-                          <i className="fa fa-remove"></i>
+                <i className="fa fa-remove"></i>
                 </button>
+
+              </div>
+
               </div>
             );
         }

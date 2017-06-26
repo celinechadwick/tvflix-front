@@ -1,4 +1,5 @@
 import Nav from "./Nav";
+import User from "./User"
 import React, { Component } from "react";
 import axios from "axios";
 
@@ -14,7 +15,7 @@ class Profile extends Component {
 
 componentDidMount() {
         axios
-        .get("")
+        .get(`https://tvflix-back.herokuapp.com/shows/${this.props.params.user.id}`)
         .then((response) => {
 
             this.setState({
@@ -30,22 +31,9 @@ componentDidMount() {
         return (
             <div>
                 <Nav />
-                <div>
-                <div className="container well small-container margin-top-20">
-                <div className="row">
-                    <div className="col-sm-8">
-                        <div className="md-font">
-                            {this.state.user.first_name} {this.state.user.last_name}
-                        </div>
-                        <div>
-                            {this.state.user.email}
-                        </div>
-                    </div>
+                <User />
 
-                    </div>
-                </div>
             </div>
-        </div>
         );
     }
 }
