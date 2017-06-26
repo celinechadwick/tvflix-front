@@ -29,8 +29,6 @@ class OneShow extends Component {
     }
 
 
-    }
-
     // TO DO: Add show to the user profile using a button
 
     render() {
