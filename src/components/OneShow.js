@@ -7,15 +7,29 @@ class OneShow extends Component {
     }
 
 
-    // saveShow (show, event) {
-    //     event.preventDefault();
-    //
-    //     window
-    //     .sessionStorage
-    //     .setItem("owner_name", `${owner.first_name} ${owner.last_name}`);
-    //
-    //     browserHistory.push(`/owners/${owner.id}/pets/new`);
-    // }
+    saveShow (show, event) {
+        event.preventDefault();
+
+        window
+        .sessionStorage
+        .setItem("tvmaze_id", `${this.props.show.externals.tvrage}`);
+
+        axios
+        .post(`https://tvflix-back.herokuapp.com/shows/${this.props.show.externals.tvrage}`, {
+            headers: {
+                "Authorization": window.localStorage.getItem("token")
+            }
+        })
+        .then(() => {
+            browserHistory.push(`/users/:id`);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }
+
+
+    }
 
     // TO DO: Add show to the user profile using a button
 
@@ -44,6 +58,10 @@ class OneShow extends Component {
                     </Link>
 
                 </div>
+
+                <a onClick={this.saveShow.bind(this, this.props.show.externals.tvrage)} href="#" className="btn btn-success">
+                    <i className="fa fa-plus"></i>
+                </a>
 
             </div>
         );
