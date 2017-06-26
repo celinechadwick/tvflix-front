@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { browserHistory, Link } from 'react-router';
 import Nav from './Nav';
-// import Like from './Like'
+import Like from './Like'
 
 import Profile from './Profile';
+// import Like from './Like';
 
 
 class User extends Component {
@@ -15,6 +16,26 @@ class User extends Component {
             user: {}
         }
     }
+
+// ComponentDidMount() {
+//     axios
+//     .get(`https://tvflix-back.herokuapp.com/users/${this.props.params.id}`, {
+//       headers: {
+//           "Authorization": window.localStorage.getItem("token")
+//         }
+//       })
+//   .then((response) => {
+//     return axios.get(`http://api.tvmaze.com/lookup/shows?tvrage=${response.data}`); // using response.data
+//   })
+//   .then((response) => {
+//     this.setState({
+//         likedShow: response.data,
+//     });
+// })
+// .catch((err) => {
+//     console.log(err);
+// });
+//   };
 
 
     componentDidMount() {
@@ -57,9 +78,17 @@ class User extends Component {
       return (
         <div>
           <Nav />
-          <Profile data={this.state.user} />
+          <Profile />
 
-
+          {this.state.user.map((like, index) => {
+            return (
+                <Like
+                key={index}
+                like={like}
+                destroyLike={this.destroyLike.bind(this, index, user.id)}
+                />
+              );
+              }) }
 
 
           </div>
