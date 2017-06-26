@@ -10,42 +10,47 @@
               show: []
             }
             }
-        }
+
 
     //Get data on user likes from the axios requests
-        componentDidMount() {
-            axios
-            .get(``)
-            .then((response) => {
-                const ShowData = response.data;
+    ComponentDidMount() {
+        axios
+        .get(`https://tvflix-back.herokuapp.com/users/${this.props.params.id}`, {
+          headers: {
+              "Authorization": window.localStorage.getItem("token")
+            }
+          })
+      .then((response) => {
+        return axios.get(`http://api.tvmaze.com/lookup/shows?tvrage=${response.data}`); // using response.data
+      })
+      .then((response) => {
+        this.setState({
+            show: response.data,
+        });
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+      };
 
-                this.setState({
-                    show: ShowData
-                });
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-        }
 
 
 //The delete needs to be tested, and I am not sure if the rendering is pointing to the right data.
         render() {
-          { this.state.shows.map((show) => {
             return (
               <div>
               <div className="col-sm-3">
-                  <img src={this.props.show.image.medium} className="img-responsive" />
+                  <img src={this.state.show.image.medium} className="img-responsive" />
               </div>
               <div className="col-sm-6">
                   <div>
-                      <strong>{this.props.show.name}</strong>
+                      <strong>{this.state.show.name}</strong>
                   </div>
                   <div className="margin-top-10">
-                      Genres: {this.props.show.genres}
+                      Genres: {this.state.show.genres}
                   </div>
                   <div>
-                      Summary: {this.props.show.summary}
+                      Summary: {this.state.show.summary}
                   </div>
               </div>
               <div className="col-sm-3 txt-right">

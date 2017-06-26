@@ -16,6 +16,26 @@ class User extends Component {
         }
     }
 
+// ComponentDidMount() {
+//     axios
+//     .get(`https://tvflix-back.herokuapp.com/users/${this.props.params.id}`, {
+//       headers: {
+//           "Authorization": window.localStorage.getItem("token")
+//         }
+//       })
+//   .then((response) => {
+//     return axios.get(`http://api.tvmaze.com/lookup/shows?tvrage=${response.data}`); // using response.data
+//   })
+//   .then((response) => {
+//     this.setState({
+//         likedShow: response.data,
+//     });
+// })
+// .catch((err) => {
+//     console.log(err);
+// });
+//   };
+
 
     componentDidMount() {
         axios
@@ -59,9 +79,15 @@ class User extends Component {
           <Nav />
           <Profile data={this.state.user} />
 
-
-
-
+          {this.state.user.map((like, index) => {
+            return (
+                <Like
+                key={index}
+                like={like}
+                destroyLike={this.destroyLike.bind(this, index, user.id)}
+                />
+              );
+              }) }
           </div>
         );
     }
