@@ -49,8 +49,6 @@
  margin-bottom: 450px;
 }*/
 
-/* TEMPORARY CSS for "SIGN-UP FORM" Lines 48 - ?? */
-
 /*#signup {
  border 5px red solid;
 
@@ -62,3 +60,25 @@
  width: 150px;
  height:50px;
 }*/
+
+
+/* TEMPORARY CSS for "DASHBOARD" Lines 68 - ?? */
+
+/*#homebutt {
+  /*background-image: url("http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/ultra-glossy-silver-buttons-icons-business/087802-ultra-glossy-silver-button-icon-business-home5.png");*/
+  /*width: 50px;
+  height: 50px;
+}*/
+
+.dash-container {
+  border: 10px pink solid;
+  width:400px;
+  height: 400px;
+}
+
+.favorites {
+  border: 10px blue solid;
+  float: right;
+  width: 60%;
+  height: 400px;
+}
