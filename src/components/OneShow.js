@@ -10,8 +10,7 @@ class OneShow extends Component {
 
     saveShow (show, event) {
         event.preventDefault();
-        axios
-        .post(`https://tvflix-back.herokuapp.com/shows/${this.props.show.externals.tvrage}/likes`, null, {
+        axios.post(`https://tvflix-back.herokuapp.com/shows/${this.props.show.externals.tvrage}/likes`, null, {
             headers: {
                 "Authorization": window.localStorage.getItem("token")
             }
