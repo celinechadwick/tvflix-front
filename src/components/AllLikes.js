@@ -13,6 +13,7 @@ class AllLikes extends Component {
 
    }
 
+
    componentDidMount() {
     axios.get(`https://tvflix-back.herokuapp.com/shows/${this.props.show}/likes/`)
        .then((response) => {
