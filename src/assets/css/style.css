@@ -1,3 +1,146 @@
+html {
+  background-image: url("../landing-background_720.jpg");
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  /*background-size: cover;*/
+}
+
+#title {
+  display: inline;
+  width: 306px;
+  height: 305;
+  /*position: absolute;*/
+  font-weight: bolder;
+  font-size: 50px;
+  font-family: 'Archivo Narrow', sans-serif;
+  color: #e50914;
+  margin-top: 0px ;
+  margin-right: 400px;
+  margin-bottom: 500px;
+  margin-left: 50px;
+  /*transform-origin: 50% 50% 0px;*/
+}
+
+#log-in {
+    float: right;
+    color: #fff;
+    background-color: #e50914;
+    line-height: normal;
+    margin: 18px 3% 0;
+    padding: 7px 17px;
+    font-weight: 400;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+/*@media (max-width: 440px)
+none:1
+#log-in {
+    margin-top: 10px;
+    font-size: 15px;
+    padding: 5px 15px;
+}*/
+
+@media (max-width: 440px)
+  none:1
+    .nfHeader .authLinks {
+        margin-top: 10px;
+        font-size: 15px;
+        padding: 5px 15px;
+}
+
+#title>span[class^=T]:nth-of-type(3) {
+  display: block;
+  position: absolute;
+  /*-moz-transform-origin:50% 100%;
+  -webkit-transform-origin:50% 100%;
+  -o-transform-origin:50% 100%;
+  -ms-transform-origin:50% 100%;
+  transform-origin:50% 100%;*/
+}
+
+#title span {
+  font-style: normal;
+  line-height: 0.65;
+  letter-spacing: -13px;
+  white-space;pre;
+  overflow:visible;
+  padding:0px;
+}
+
+.L {
+    -moz-transform: rotate(-1.14rad);
+    -webkit-transform: rotate(-1.14rad);
+    -o-transform: rotate(-1.14rad);
+    -ms-transform: rotate(-1.14rad);
+    transform: rotate(3rad);
+    width: 21px;
+    height: 24px;
+    left: 42.7px;
+    top: 93.95px;
+}
+
+h1 {
+  background-color: gray;
+  position: relative;
+  display: inline-block;
+  color: white;
+  font-size: 60px;
+  line-height: 1.1em;
+  font-weight: 700px;
+  text-shadow: 0 0 black;
+}
+
+h3 {
+  /*display: block;*/
+  color: white;
+  font-size: 30px;
+  /*margin-top: 200px;
+  margin-right: 200;
+  margin-bottom: 600px;
+  margin-left: 50px;*/
+
+}
+
+.wrapper {
+  margin-top: 300px;
+  margin-right: 200;
+  margin-bottom: 600px;
+  margin-left: 50px;
+  color: white;
+}
+
+#join {
+  /*float: left;*/
+  color: #fff;
+  background-color: #e50914;
+  line-height: normal;
+  /*margin: 18px 3% 0;*/
+  /*padding: 7px 17px;*/
+  font-weight: 50px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 46px;
+  /*margin-top: 200px;*/
+  margin-right: 200;
+  margin-bottom: 900px;
+  margin-left: 50px;
+}
+
+
+
+
+
+
+
+
+
 /* TEMPORARY CSS for "LOGIN FORM" Lines 1- 44 */
 
 /*.container {
@@ -6,7 +149,6 @@
     /*border: 20px purple solid;
     border-style: inset outset;
     border-radius: 10px;
-
     background-repeat: no-repeat;
     background-position:center;
     width: 900px;
@@ -33,7 +175,6 @@
  margin-right: 250px;
  margin-bottom: 400px;
  margin-left: 220px
-
 }*/
 
 /*button {
@@ -53,7 +194,6 @@
 
 /*#signup {
  border 5px red solid;
-
 }*/
 
 /*#signupbutt {
