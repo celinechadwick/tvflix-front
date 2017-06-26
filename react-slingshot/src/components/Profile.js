@@ -16,11 +16,9 @@ componentDidMount() {
         axios
         .get("")
         .then((response) => {
-            const userData = response.data;
 
-            //Next up: Set state with user from API
             this.setState({
-                user: userData
+                user: response.data
             });
         })
         .catch((err) => {

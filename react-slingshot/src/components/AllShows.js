@@ -37,7 +37,7 @@ class AllShows extends Component {
 
                 { this.state.shows.map((show) => {
                     return (
-                        <OneShow key={show.id} show={show} />
+                      <OneShow key={show.id} show={show} />
                     );
                 }) }
             </div>

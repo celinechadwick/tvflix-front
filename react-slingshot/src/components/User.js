@@ -1,9 +1,10 @@
-import React, { Component } from "react";
-import axios from "axios";
-import { browserHistory, Link } from "react-router";
+import React, { Component } from 'react';
+import axios from 'axios';
+import { browserHistory, Link } from 'react-router';
+import Nav from './Nav';
 
-import Profile from "./Profile";
-import Like from "./Like";
+import Profile from './Profile';
+// import Like from './Like';
 
 
 class User extends Component {
@@ -11,19 +12,21 @@ class User extends Component {
         super(props);
 
         this.state = {
-            likes: []
+            user: {}
         }
     }
 
-//Get data on user likes from the axios requests
+
     componentDidMount() {
         axios
-        .get(``)
+        .get(`https://tvflix-back.herokuapp.com/users/${this.props.params.id}`, {
+            headers: {
+                "Authorization": window.localStorage.getItem("token")
+            }
+        })
         .then((response) => {
-            const LikeData = response.data;
-
             this.setState({
-                likes: LikeData
+                user: response.data,
             });
         })
         .catch((err) => {
@@ -37,19 +40,26 @@ class User extends Component {
     render() {
         return (
           <div>
-                <Nav />
-                <Profile />
-                { this.state.likes.map((like, index) => {
-                    return (
-                        <Like
-                        key={like.id}
-                        like={like}
-                        />
-                    );
-                }) }
+              <Nav />
+              <div>
+              <div className='container well small-container margin-top-20'>
+              <div className='row'>
+                  <div className='col-sm-8'>
+                      <div className='md-font'>
+                          {this.state.user.first_name} {this.state.user.last_name}
+                      </div>
+                      <div>
+                          {this.state.user.email}
+                      </div>
+                      <div>
+                          {this.state.user.created_at}
+                      </div>
+                  </div>
 
-
-            </div>
+                  </div>
+              </div>
+          </div>
+      </div>
         );
     }
 }

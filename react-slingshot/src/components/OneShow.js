@@ -5,6 +5,8 @@ class OneShow extends Component {
     constructor(props) {
         super(props);
     }
+
+
     // saveShow (show, event) {
     //     event.preventDefault();
     //
@@ -20,9 +22,11 @@ class OneShow extends Component {
     render() {
         return (
             <div className="row margin-top-20">
+              <Link to={`/shows/${this.props.show.externals.tvrage}`}>
                 <div className="col-sm-3">
                     <img src={this.props.show.image.medium} className="img-responsive" />
                 </div>
+              </Link>
                 <div className="col-sm-6">
                     <div>
                         <strong>{this.props.show.name}</strong>
@@ -40,6 +44,7 @@ class OneShow extends Component {
                     </Link>
 
                 </div>
+
             </div>
         );
     }

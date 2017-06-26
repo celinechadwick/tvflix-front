@@ -14,7 +14,7 @@ class Landing extends Component {
 
                     <div>
                       <Link to="/users/login">
-                        Add Owner
+                        Login
                       </Link>
                     </div>
 
@@ -26,4 +26,3 @@ class Landing extends Component {
 }
 
     export default Landing;
-

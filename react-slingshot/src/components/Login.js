@@ -6,12 +6,17 @@ import axios from "axios";
 class Login extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
             userData:[]
-            // Get info for user and store in this object
     };
   }
 
+  componentWillMount() {
+    if (window.localStorage.token) {
+      browserHistory.push('/shows');
+    }
+  }
 
   handleSubmit(event) {
       event.preventDefault();
