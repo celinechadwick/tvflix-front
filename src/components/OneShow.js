@@ -1,5 +1,6 @@
- import React, { Component } from "react";
-import { Link } from "react-router";
+import React, { Component } from "react";
+import { browserHistory, Link } from "react-router";
+import axios from 'axios';
 
 class OneShow extends Component {
     constructor(props) {
@@ -9,19 +10,14 @@ class OneShow extends Component {
 
     saveShow (show, event) {
         event.preventDefault();
-
-        window
-        .sessionStorage
-        .setItem("tvmaze_id", `${this.props.show.externals.tvrage}`);
-
         axios
-        .post(`https://tvflix-back.herokuapp.com/shows/${this.props.show.externals.tvrage}`, {
+        .post(`https://tvflix-back.herokuapp.com/shows/${this.props.show.externals.tvrage}/likes`, null, {
             headers: {
                 "Authorization": window.localStorage.getItem("token")
             }
         })
         .then(() => {
-            browserHistory.push(`/users/:id`);
+            browserHistory.push(`/shows/${this.props.show.externals.tvrage}`);
         })
         .catch((err) => {
             console.log(err);
@@ -51,15 +47,13 @@ class OneShow extends Component {
                     </div>
                 </div>
                 <div className="col-sm-3 txt-right">
-                    <Link to="#" className="btn btn-info margin-left-5">
-                        <i className="btn btn-primary btn-sm"></i>
-                    </Link>
+                <Link onClick={this.saveShow.bind(this, this.props.show.externals.tvrage)} className="btn btn-danger">
+                    <i className="glyphicon glyphicon-heart-empty"></i>
+                </Link>
 
                 </div>
 
-                <a onClick={this.saveShow.bind(this, this.props.show.externals.tvrage)} href="#" className="btn btn-success">
-                    <i className="fa fa-plus"></i>
-                </a>
+
 
             </div>
         );
