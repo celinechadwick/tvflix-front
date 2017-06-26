@@ -12,7 +12,7 @@ class Nav extends Component {
     render() {
         if (window.localStorage.getItem("token")) {
             return (
-                <LoggedInNav />
+                <LoggedNav />
             );
         } else {
             return (

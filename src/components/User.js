@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { browserHistory, Link } from 'react-router';
 import Nav from './Nav';
-import Like from './Like'
+// import Like from './Like'
 
 import Profile from './Profile';
-// import Like from './Like';
 
 
 class User extends Component {
@@ -58,17 +57,9 @@ class User extends Component {
       return (
         <div>
           <Nav />
-          <Profile />
+          <Profile data={this.state.user} />
 
-          { this.state.owners.map((like, index) => {
-            return (
-                <Like
-                key={index}
-                like={like}
-                destroyLike={this.destroyLike.bind(this, index, user.id)}
-                />
-              );
-              }) }
+
 
 
           </div>
