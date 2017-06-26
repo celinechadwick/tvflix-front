@@ -15,9 +15,10 @@ class AllShows extends Component {
 
 
     componentDidMount() {
-      //TO DO: Would be best to get a random number for the page param. Would give you a new page every time!
+        let rando = Math.ceil(Math.random() * 3);
+
         axios
-        .get(`http://api.tvmaze.com/shows?page=1`)
+        .get(`http://api.tvmaze.com/shows?page=${rando}`)
         .then((response) => {
             this.setState({
                 shows: response.data
