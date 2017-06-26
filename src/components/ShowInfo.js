@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { browserHistory, Link } from "react-router";
 import axios from "axios";
 import AllLikes from './AllLikes'
+import Nav from './Nav'
 
 class ShowInfo extends Component {
    constructor(props) {
@@ -46,6 +47,9 @@ class ShowInfo extends Component {
    render() {
        return (
            <div className="row margin-top-20">
+              <Nav />
+
+              <div className="container well small-container margin-top-20">
                <div className="col-sm-3">
                    <img src={this.state.show.image ? this.state.show.image.medium : "http://www.ebikes.ca/tripanalyzer/img/loading.jpg"} />
 
@@ -73,6 +77,7 @@ class ShowInfo extends Component {
                </Link>
                : ""}
 
+               </div>
                </div>
            </div>
        );

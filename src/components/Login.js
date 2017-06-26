@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { browserHistory, Link } from "react-router";
 import axios from "axios";
+import Nav from './Nav';
 
 
 class Login extends Component {
@@ -46,6 +47,11 @@ class Login extends Component {
     render() {
             return (
                 <div>
+                <Nav />
+
+                <h2 className="txt-center">Create An Account</h2>
+
+                <div className="container well small-container margin-top-20">
                   <form onSubmit={this.handleSubmit.bind(this)}>
                         <div className="bold">
                             Email
@@ -69,7 +75,7 @@ class Login extends Component {
                         Make An Account
                       </Link>
                     </div>
-
+                  </div>
                 </div>
             );
         }

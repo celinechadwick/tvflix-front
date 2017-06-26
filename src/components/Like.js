@@ -1,67 +1,57 @@
 //This method should be used to delete a like
-    import React, { Component } from "react";
-    import axios from "axios";
-    import { browserHistory, Link } from "react-router";
+import React, { Component } from "react";
+import axios from "axios";
+import { browserHistory, Link } from "react-router";
+import OneShow from './OneShow'
 
-    class Like extends Component {
-        constructor(props) {
-            super(props);
-            this.state = {
-              show: []
-            }
-            }
+export default class Like extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+          likedShows: null
+        }
+      }
 
 
-    //Get data on user likes from the axios requests
-    ComponentDidMount() {
-        axios
-        .get(`https://tvflix-back.herokuapp.com/users/${this.props.params.id}`, {
-          headers: {
-              "Authorization": window.localStorage.getItem("token")
-            }
-          })
+//Get data on user likes from the axios requests
+componentDidMount() {
+  let allShowData = [];
+
+  this.props.data.forEach((like) => {
+    axios.get(`http://api.tvmaze.com/lookup/shows?tvrage=${like}`)
       .then((response) => {
-        return axios.get(`http://api.tvmaze.com/lookup/shows?tvrage=${response.data}`); // using response.data
+        allShowData.push(response.data)
       })
-      .then((response) => {
-        this.setState({
-            show: response.data,
-        });
-    })
-    .catch((err) => {
-        console.log(err);
-    });
-      };
+      .catch((err) => {
+          console.log(err);
+      });
+  }
+);
+  this.setState({
+      likedShows: allShowData,
+  });
+
+}
+
 
 
 
 //The delete needs to be tested, and I am not sure if the rendering is pointing to the right data.
-        render() {
-            return (
-              <div>
-              <div className="col-sm-3">
-                  <img src={this.state.show.image.medium} className="img-responsive" />
-              </div>
-              <div className="col-sm-6">
-                  <div>
-                      <strong>{this.state.show.name}</strong>
-                  </div>
-                  <div className="margin-top-10">
-                      Genres: {this.state.show.genres}
-                  </div>
-                  <div>
-                      Summary: {this.state.show.summary}
-                  </div>
-              </div>
-              <div className="col-sm-3 txt-right">
+    render() {
+        return (
+          <div>
 
-                <button onClick={this.props.destroyLike} className="btn btn-danger margin-left-5">
-                <i className="fa fa-remove"></i>
-                </button>
 
-              </div>
 
-              </div>
-            );
-        }
+
+          { this.state.likedShows ? this.state.likedShows.map((show) => {
+              return (
+                <OneShow key={show.id} show={show} />
+              );
+          }) : "" }
+
+          </div>
+        );
     }
+}

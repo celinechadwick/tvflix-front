@@ -46,13 +46,6 @@ none:1
     padding: 5px 15px;
 }*/
 
-@media (max-width: 440px)
-  none:1
-    .nfHeader .authLinks {
-        margin-top: 10px;
-        font-size: 15px;
-        padding: 5px 15px;
-}
 
 #title>span[class^=T]:nth-of-type(3) {
   display: block;
@@ -68,7 +61,7 @@ none:1
   font-style: normal;
   line-height: 0.65;
   letter-spacing: -13px;
-  white-space;pre;
+  white-space: pre;
   overflow:visible;
   padding:0px;
 }

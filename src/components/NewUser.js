@@ -16,6 +16,12 @@ class NewUser extends Component {
         }
     }
 
+    componentWillMount() {
+      if (window.localStorage.token) {
+        browserHistory.push('/shows');
+      }
+    }
+
     handleSubmit(event) {
         event.preventDefault();
 

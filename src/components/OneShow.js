@@ -28,6 +28,7 @@ class OneShow extends Component {
 
     render() {
         return (
+          <div className="container well small-container margin-top-20">
             <div className="row margin-top-20">
               <Link to={`/shows/${this.props.show.externals.tvrage}`}>
                 <div className="col-sm-3">
@@ -51,7 +52,7 @@ class OneShow extends Component {
                 </Link>
 
                 </div>
-
+                </div>
 
 
             </div>
