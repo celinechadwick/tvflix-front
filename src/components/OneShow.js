@@ -43,7 +43,7 @@ class OneShow extends Component {
                         Genres: {this.props.show.genres}
                     </div>
                     <div>
-                        Summary: {this.props.show.summary}
+                        Summary: <span dangerouslySetInnerHTML={{__html: this.props.show.summary}} />
                     </div>
                 </div>
                 <div className="col-sm-3 txt-right">

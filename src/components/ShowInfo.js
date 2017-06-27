@@ -62,7 +62,7 @@ class ShowInfo extends Component {
                        Genres: {this.state.show.genres}
                    </div>
                    <div>
-                       Summary: {this.state.show.summary}
+                       Summary: <span dangerouslySetInnerHTML={{__html: this.state.show.summary}} />
                    </div>
                    <div>
                    <b>Liked By:</b><br/>
