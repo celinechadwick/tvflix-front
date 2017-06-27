@@ -61,8 +61,8 @@ class EditUser extends Component {
     handleDeActivate(event) {
 
         axios.put(`https://tvflix-back.herokuapp.com/users/${this.props.params.id}`, {
-          user: {
-              is_active: false
+          "user": {
+              "is_active": false,
           }
         }, {
             headers: {
