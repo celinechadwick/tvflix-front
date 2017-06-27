@@ -1,12 +1,12 @@
-html {
+/*html {
   background-image: url("../landing-background_720.jpg");
   background-color: black;
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  /*background-size: cover;*/
-}
+  background-size: cover;
+}*/
 
 #title {
   display: inline;
@@ -126,72 +126,12 @@ h3 {
   margin-left: 50px;
 }
 
-
-
-
-
-
-
-
-
-/* TEMPORARY CSS for "LOGIN FORM" Lines 1- 44 */
-
-/*.container {
-      /*	background-image:url("new_tv.jpeg");*/
-      /*	background-image:url("TV_for Login.svg");*/
-    /*border: 20px purple solid;
-    border-style: inset outset;
-    border-radius: 10px;
-    background-repeat: no-repeat;
-    background-position:center;
-    width: 900px;
-    height: 600px;
-    margin-top: 100px;
-    margin-right: 300px;
-    margin-bottom: 400px;
-    margin-left: 300px;
-}*/
-
-/*input {
- border: 5px gray solid;
- font-size: 20px;
- font-weight: bold;
- display: block;
- width: 280px;
- height:20px;
- padding: 20px 2px;
-}*/
-
-/*.login{
- position: absolute;
- margin-top: 200px;
- margin-right: 250px;
- margin-bottom: 400px;
- margin-left: 220px
-}*/
-
-/*button {
- border: 5px gray solid;
- font-size: 20px;
- font-weight: bolder;
- text-align: center;
- display: block;
- width: 180px;
- height:20px;
- padding: 20px;
- margin-top: 50px;
- margin-bottom: 450px;
-}*/
-
-/* TEMPORARY CSS for "SIGN-UP FORM" Lines 48 - ?? */
-
-/*#signup {
- border 5px red solid;
-}*/
-
-/*#signupbutt {
- border-radius: all;
- color: red;
- width: 150px;
- height:50px;
-}*/
+#landing-title-only-here {
+  background-image: url("../landing-background_720.jpg");
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

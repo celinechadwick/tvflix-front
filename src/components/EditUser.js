@@ -45,7 +45,7 @@ class EditUser extends Component {
             }
         })
         .then(() => {
-            browserHistory.push(`users/${this.props.params.id}`);
+            browserHistory.push(`/users/${this.props.params.id}`);
         })
         .catch((err) => {
             console.log(err);
@@ -55,6 +55,26 @@ class EditUser extends Component {
     handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value
+        });
+    }
+
+    handleDeActivate(event) {
+
+        axios.put(`https://tvflix-back.herokuapp.com/users/${this.props.params.id}`, {
+          user: {
+              is_active: false
+          }
+        }, {
+            headers: {
+                "Authorization": window.localStorage.getItem("token")
+            }
+        })
+        .then(() => {
+          window.localStorage.removeItem("token");
+          browserHistory.push('/users/login');
+        })
+        .catch((err) => {
+            console.log(err);
         });
     }
 
@@ -96,6 +116,7 @@ class EditUser extends Component {
                         </div>
                     </form>
                 </div>
+                <button onClick={this.handleDeActivate.bind(this)}> Deactivate Account (CANNOT BE UNDONE) </button>
             </div>
         );
     }

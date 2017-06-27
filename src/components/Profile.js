@@ -1,6 +1,7 @@
 import Nav from "./Nav";
 import React, { Component } from "react";
 import axios from "axios";
+import {Link} from 'react-router'
 
 class Profile extends Component {
     constructor(props) {
@@ -12,10 +13,13 @@ class Profile extends Component {
     render() {
         return (
             <div>
-              {this.props.data.first_name} {this.props.data.last_name}
+            <div className="container well small-container margin-top-20">
+              Full Name: {this.props.data.first_name} {this.props.data.last_name}
               <br />
-              {this.props.data.created_at}
-
+              Created Account: {this.props.data.created_at}
+              <br />
+              <Link to={`/users/${this.props.data.id}/edit`}>Edit Profile</Link>
+            </div>
 
             </div>
         );

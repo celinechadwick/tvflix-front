@@ -26,7 +26,9 @@ class Login extends Component {
       })
         .then((response) => {
             const token = response.data.token;
+            const userID = response.data.userID;
             window.localStorage.setItem("token", token);
+            window.localStorage.setItem("userID", userID);
             browserHistory.push("/shows");
         })
         .catch((err) => {
@@ -49,7 +51,7 @@ class Login extends Component {
                 <div>
                 <Nav />
 
-                <h2 className="txt-center">Create An Account</h2>
+                <h2 className="txt-center">Login</h2>
 
                 <div className="container well small-container margin-top-20">
                   <form onSubmit={this.handleSubmit.bind(this)}>
@@ -63,7 +65,7 @@ class Login extends Component {
                             Password
                         </div>
                         <div className="margin-top-10">
-                            <input onChange={this.verifyForm.bind(this)} name="password" type="text" className="form-control" />
+                            <input onChange={this.verifyForm.bind(this)} name="password" type="password" className="form-control" />
                         </div>
 
                         <div className="margin-top-20 txt-center">

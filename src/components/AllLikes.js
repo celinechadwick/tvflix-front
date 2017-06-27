@@ -27,17 +27,19 @@ class AllLikes extends Component {
        });
    }
 
-
-
    render() {
        return (
            <div>
 
              { this.state.likes.map((like) => {
                  return (
-                   <div key={like.id}>
-                    {`${like.first_name} ${like.last_name} ${like.created_at}`}
-                   </div>
+                   <div>
+
+
+                     <div key={like.id}>
+                      {`${like.first_name} ${like.last_name} ${like.created_at}`}
+                     </div>
+                  </div>
                  );
              }) }
 

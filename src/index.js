@@ -4,8 +4,6 @@ import { Route, Router, browserHistory } from "react-router";
 
 //Application assets
 
-// import "./assets/css/style.css";
-
 import "./assets/css/bootstrap.css";
 
 import Landing from "./components/Landing";

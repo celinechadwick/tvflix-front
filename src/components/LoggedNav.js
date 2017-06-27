@@ -10,6 +10,7 @@ class LoggedNav extends Component {
         event.preventDefault();
 
         window.localStorage.removeItem("token");
+        window.localStorage.removeItem("userID");
 
         browserHistory.push("/users/login");
     }
@@ -20,9 +21,7 @@ class LoggedNav extends Component {
                 <div className="container-fluid">
                     <div className="navbar-header">
                         <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
+
                         </button>
                         <div className="navbar-brand">
                             TVflix
@@ -32,7 +31,7 @@ class LoggedNav extends Component {
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav">
                             <li>
-                                <Link to="/users/">
+                                <Link to={`/users/${window.localStorage.userID}`}>
                                     User Profile
                                 </Link>
                             </li>
