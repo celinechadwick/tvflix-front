@@ -2,19 +2,6 @@ import React from "react";
 import ReactDom from "react-dom";
 import { Route, Router, browserHistory } from "react-router";
 
-
-const express = require("express");
-const app = express();
-
-app.use(express.static(__dirname + "/dist"));
-
-app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/dist/index.html");
-});
-
-
-
-
 //Application assets
 
 import "./assets/css/bootstrap.css";
@@ -46,6 +33,3 @@ ReactDom.render(
         <Route path="/users/:id/edit" component={EditUser} onEnter={restrict} />
     </Router>
 , document.getElementById("app"));
-
-
-app.listen(process.env.PORT || 3000);
