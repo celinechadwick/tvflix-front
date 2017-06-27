@@ -14,6 +14,7 @@ import NewUser from "./components/NewUser";
 import User from "./components/User";
 import AllShows from "./components/AllShows";
 import ShowInfo from "./components/ShowInfo";
+import EditUser from "./components/EditUser";
 
 
 const restrict = () => {
@@ -31,5 +32,6 @@ ReactDom.render(
         <Route path="/users/:id" component={User} onEnter={restrict} />
         <Route path="/shows" component={AllShows} onEnter={restrict} />
         <Route path="/shows/:tvmaze_id" component={ShowInfo} onEnter={restrict} />
+        <Route path="/users/:id/edit" component={EditUser} onEnter={restrict} />
     </Router>
 , document.getElementById("app"));
